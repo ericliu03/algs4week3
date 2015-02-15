@@ -1,5 +1,3 @@
-
-
 /*************************************************************************
  * Name:
  * Email:
@@ -17,7 +15,7 @@ import java.util.Comparator;
 public class Point implements Comparable<Point> {
 
     // compare points by slope
-    public final Comparator<Point> SLOPE_ORDER = new SlopeOrder(this);       // YOUR DEFINITION HERE
+    public final Comparator<Point> SLOPE_ORDER;       // YOUR DEFINITION HERE
 
     private final int x;                              // x coordinate
     private final int y;                              // y coordinate
@@ -41,38 +39,15 @@ public class Point implements Comparable<Point> {
         StdDraw.line(this.x, this.y, that.x, that.y);
     }
 
-    private static class SlopeOrder implements Comparator<Point> {
-
-    	private Point point0;
-    	
-		public SlopeOrder(Point point) {
-			point0 = point;
-		}
-		@Override
-		public int compare(Point p1, Point p2) {
-			double p1Slope = point0.slopeTo(p1);
-			double p2Slope = point0.slopeTo(p2);
-			return (int) (p1Slope - p2Slope);
-		}
-    	
-    }
-    private boolean samePosition(Point that) {
-    	return this.x == that.x && this.y == that.y;
-    }
-    
     // slope between this point and that point
     public double slopeTo(Point that) {
-    	if (this.samePosition(that)) return Double.NEGATIVE_INFINITY;
-    	else if(this.x == that.x) return Double.POSITIVE_INFINITY;
-    	else if(this.y == that.y) return 0;
-        return ((double)this.y - that.y)/(this.x - that.x);
+        /* YOUR CODE HERE */
     }
 
     // is this point lexicographically smaller than that one?
     // comparing y-coordinates and breaking ties by x-coordinates
     public int compareTo(Point that) {
-        if (this.y == that.y) return this.x - that.x;
-        else return this.y - that.y;
+        /* YOUR CODE HERE */
     }
 
     // return string representation of this point
